@@ -1,0 +1,31 @@
+<div class="grid">
+  <aside class="side-bar">
+    <button class="primary-btn action">Compose</button>
+    <div class="action">Inbox ({{ emails.length }})</div>
+    <div class="action">Trash ({{ trash.length }})</div>
+    <div class="action">Tags</div>
+    <div *ngFor="let tag of tags">
+      <i class="fa fa-square" [style.color]="getTagColor(tag)"></i>
+      {{tag}}
+    </div>
+  </aside>
+  <div class="main-content">
+    <header>
+      <div *ngIf="selectedEmails.length > 0">
+        <button (click)="moveToTrash()"><i class="fa fa-trash"></i></button>
+        <button (click)="addTag()"><i class="fa fa-tag"></i></button>
+      </div>
+    </header>
+    <div *ngFor="let email of emails" class="row" [class.selected]="checkbox.checked">
+      <label class="checkbox-wrapper" for="checkbox">
+        <input type="checkbox" id="checkbox" (change)="selectEmail(checkbox.checked, email)" #checkbox>
+      </label>
+      <div>{{email.sender}}</div>
+      <div>
+        <span *ngFor="let tag of email.tags" class="tag" [style.background]="this.getTagColor(tag)">{{tag}}</span>
+        <span class="subject">{{email.subject}}</span>
+      </div>
+      <div>{{email.date | date:'short'}}</div>
+    </div>
+  </div>
+</div>

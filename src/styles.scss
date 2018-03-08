@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'assets/variables';
+@import '~font-awesome/scss/font-awesome';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+
+  button {
+    outline: none;
+  }
+}
