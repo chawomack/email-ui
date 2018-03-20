@@ -1,0 +1,16 @@
+<div *ngIf="email" class="wrapper">
+  <div class="toolbar">
+    <button routerLink="/inbox"><i class="fa fa-long-arrow-left"></i></button>
+    <button (click)="moveToTrash()"><i class="fa fa-trash"></i></button>
+    <button (click)="addTag()"><i class="fa fa-tag"></i></button>
+  </div>
+  <div class="heading">
+    <div>{{email.subject}}</div>
+    <div>{{email.date | date:'short'}}</div>
+  </div>
+  <div class="sender">
+    <i class="fa fa-user-circle"></i>
+    <span>{{email.sender}}</span>
+  </div>
+  <div [innerHtml]="email?.body"></div>
+</div>

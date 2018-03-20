@@ -1,0 +1,17 @@
+<div *ngIf="selectedEmails.length > 0">
+  <button (click)="moveToTrash()"><i class="fa fa-trash"></i></button>
+  <button (click)="addTag()"><i class="fa fa-tag"></i></button>
+</div>
+<div *ngFor="let email of emails; let i = index;" class="row" [class.selected]="checkbox.checked">
+  <label class="checkbox-wrapper" for="checkbox-{{i}}">
+    <input type="checkbox" id="checkbox-{{i}}" (change)="selectEmail(checkbox.checked, email)" #checkbox>
+  </label>
+  <div routerLink="/inbox/{{email.id}}" class="email-info">
+    <div>{{email.sender}}</div>
+    <div>
+      <span *ngFor="let tag of email.tags" class="tag">{{tag}}</span>
+      <span class="subject">{{email.subject}}</span>
+    </div>
+    <div>{{email.date | date:'short'}}</div>
+  </div>
+</div>

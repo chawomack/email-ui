@@ -7,6 +7,12 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 
   button {
+    width: 5vw;
+    height: 5vh;
+    margin: 0;
+    background: $light-gray;
+    border: 1px solid $primary-gray;
     outline: none;
+    color: $medium-gray;
   }
 }

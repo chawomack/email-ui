@@ -2,7 +2,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 20vw 80vw;
+  grid-template-columns: 2fr 8fr;
   grid-column-gap: 10px;
 
   .side-bar {
@@ -11,49 +11,17 @@
     .action {
       margin: 10px 0;
       cursor: pointer;
+
+      .primary-btn {
+        margin: 0 auto;
+      }
     }
   }
 
   .main-content {
     header {
       height: 8vh;
-      button {
-        width: 5vw;
-        height: 5vh;
-        margin: 0;
-        background: $light-gray;
-        border: 1px solid $primary-gray;
-      }
     }
-    .row {
-      display: grid;
-      grid-template-columns: 5vw 20vw 35vw 10vw;
-      border-bottom: 1px solid $light-gray;
-      padding: 10px 0;
-
-      &.selected {
-        background: #FFF9C4;
-      }
-      .checkbox-wrapper {
-        padding: 0 15px;
-        cursor: pointer;
-        input[type=checkbox] {
-          margin-left: 10px;
-          cursor: pointer;
-        }
-      }
-      .subject {
-        font-weight: bold;
-      }
-    }
-  }
-
-  .tag {
-    background: $light-gray;
-    padding: 5px;
-    margin: 2px;
-    font-size: 0.7em;
-    color: rgba(0, 0 ,0, 0.6);
   }
 }
 
@@ -65,4 +33,5 @@
   min-width: 80px;
   border-radius: 5px;
   padding: 10px;
+  text-align: center;
 }

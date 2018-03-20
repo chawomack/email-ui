@@ -1,0 +1,37 @@
+@import '../../assets/variables';
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  border-bottom: 1px solid $light-gray;
+  padding: 10px 0;
+
+  .email-info {
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+    cursor: pointer;
+  }
+
+  &.selected {
+    background: #FFF9C4;
+  }
+  .checkbox-wrapper {
+    padding: 0 15px;
+    cursor: pointer;
+    input[type=checkbox] {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+  .subject {
+    font-weight: bold;
+  }
+
+  .tag {
+    background: $light-gray;
+    padding: 5px;
+    margin: 2px;
+    font-size: 0.7em;
+    color: rgba(0, 0 ,0, 0.6);
+  }
+}

@@ -1,0 +1,28 @@
+@import "../../assets/variables";
+
+.wrapper {
+  margin: 0 10px;
+  .heading {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    align-items: center;
+    margin: 15px 0;
+    border-bottom: 1px solid $primary-gray;
+
+    :first-child {
+      font-size: 2em;
+    }
+    :last-child {
+      text-align: right;
+    }
+  }
+
+  .sender {
+    i {
+      color: $primary-gray;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+}
